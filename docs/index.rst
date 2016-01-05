@@ -9,7 +9,7 @@ Autor Rando Hinn
 .. _user-docs:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :caption: Võrgurakendused
 
    Vorgurakendused/virtualiseerimiskeskkond.rst
