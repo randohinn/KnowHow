@@ -10,7 +10,7 @@ Märkasid dokumentatsioonis viga? Anna sellest teada GitHubis_!
 Autor Rando Hinn
 
 
-.. _user-docs:
+.. _network-docs:
 
 .. toctree::
    :maxdepth: 2
@@ -20,3 +20,11 @@ Autor Rando Hinn
    Vorgurakendused/ansible.rst
    Vorgurakendused/webmail.rst
    Vorgurakendused/owncloud.rst
+
+.. _linux-docs:
+
+   .. toctree::
+      :maxdepth: 2
+      :caption: Linuxi Masspaigaldus
+
+      Linuxi_Masspaigaldus/Ubuntu-unnatend.rst

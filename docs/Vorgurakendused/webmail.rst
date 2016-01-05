@@ -48,7 +48,7 @@ ekraanidel võiks teha sellised valikud, loomaks meiliserverit :code:`fun.loc`.
   Internet protocols to use: ipv4
 
 
-    **Meiliserveri testimine**
+  **Meiliserveri testimine**
 
 Meili saadab esmalt välisele meilikontole.
 
