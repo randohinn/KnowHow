@@ -26,11 +26,11 @@ suuda masin hiljem välisvõrku :code:`ping`-ida.
 Lisaks tuleb faili lisada ka teine adapter.
 
 .. code:: bash
-    auto eth1
-    iface eth1 inet static
-        address 10.0.0.1
-        netmask 255.255.255.0
-        gateway 10.0.0.254
+  auto eth1
+  iface eth1 inet static
+    address 10.0.0.1
+    netmask 255.255.255.0
+    gateway 10.0.0.254
 
 
  Kliendis
