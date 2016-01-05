@@ -87,7 +87,7 @@ Asub see asukohas :code:`preseed/ubuntu.seed`. Faili võib seal eelnevalt olevas
 puhastada. Alljärgnevalt on toodud selle faili uus sisu, antud ülesande järgi.
 Lihtsuse huvides on fail jagatud pealkirjade kaupa.
 
-    **Installer ja klaviatuur**
+**Installer ja klaviatuur**
 
 .. code:: bash
 
