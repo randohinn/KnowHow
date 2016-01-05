@@ -16,8 +16,9 @@ on 2 võrguadapterit - nesit esimene pääseb internetti, ning teine on
  Võrgukonfiguratsioon
 ----------------------
 
+----------
  Serveris
-==========
+----------
 
 Failis :code:`/etc/network/interfaces` tuleb teha täiendusi. Olemasolev
 :code:`allow-hotplug eth0` tuleb muuta :code:`auto eth0`-iks. Vastasel juhul ei
@@ -32,9 +33,9 @@ Lisaks tuleb faili lisada ka teine adapter.
     netmask 255.255.255.0
     gateway 10.0.0.254
 
-
+----------
  Kliendis
-==========
+----------
 
 Korrata serverimasinas tehtut. **NB! Kindlasti TULEB Kliendile määrata mingi
 muu IP aadress, nt 10.0.0.2 !!**
