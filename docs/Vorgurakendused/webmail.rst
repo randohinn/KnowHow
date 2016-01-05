@@ -48,10 +48,9 @@ ekraanidel võiks teha sellised valikud, loomaks meiliserverit :code:`fun.loc`.
   Internet protocols to use: ipv4
 
 
+    **Meiliserveri testimine**
 
-    **meiliserveri testimine**
-
-Saadan meili esmalt välisele meilikontole.
+Meili saadab esmalt välisele meilikontole.
 
 .. code:: bash
 
