@@ -79,6 +79,6 @@ Dovecot on IMAP ja POP3 server. Installimine:
 Failis :code:`/etc/dovecot/conf.d/10-master.conf` teha järgnevad muudatused.
 
 .. code-block:: bash
-   :lineno-start:19
-
+  ::linenos:
+  
   post: 143
