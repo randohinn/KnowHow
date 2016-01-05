@@ -130,4 +130,4 @@ Loon admin kasutaja.
 
 Owncloud töötab
 
-![](http://i.imgur.com/b2F2Nzk.png)
+.. image:: http://i.imgur.com/b2F2Nzk.png
