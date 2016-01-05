@@ -177,8 +177,8 @@ failina :code:`autoinstall.iso`.
 
 .. code:: bash
 
-rando@masin:~$ cd ubuntu_files
-rando@masin:~/ubuntu_files$ mkisofs -D -r -V “$IMAGE_NAME” -cache-inodes -J -l -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -o /media/sf_share/autoinstall.iso .
+  rando@masin:~$ cd ubuntu_files
+  rando@masin:~/ubuntu_files$ mkisofs -D -r -V “$IMAGE_NAME” -cache-inodes -J -l -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -o /media/sf_share/autoinstall.iso .
 
 ---------
  Tulemus
