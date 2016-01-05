@@ -64,6 +64,6 @@ Eeldusel, et :code:`/var/www/ees`, ja :code:`/var/www/pere` kaustad on veebiserv
 loetavad (testimiseks kõlbab chmod 777), avanevad mõlemal IP-l vastavasisulised
 saidid.
 
-..image:: http://i.imgur.com/VtNVMkJ.png
+.. image:: http://i.imgur.com/VtNVMkJ.png
 
-..image:: http://i.imgur.com/tpuYT7t.png
+.. image:: http://i.imgur.com/tpuYT7t.png
