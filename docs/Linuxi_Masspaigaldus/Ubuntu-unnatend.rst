@@ -7,7 +7,7 @@
 ------
 
 Tegemist Ubuntu Unattended Installeerimise iso loomise dokumentatsiooniga.
-Loodud ```Ubuntu 14.04 LTS Desktop``` versioonile. Ühilduvus hilisemate versioonidega
+Loodud :code:`Ubuntu 14.04 LTS Desktop` versioonile. Ühilduvus hilisemate versioonidega
 ei ole garanteeritud.
 
 ----------------
@@ -15,7 +15,7 @@ ei ole garanteeritud.
 ----------------
 
 * Ubuntu Desktopi-ga virtuaalmasin.
-* Teadmine, et siinseid käske tuleb jooksutada **ilma** ```rando@masin:~$``` eesliiteta.
+* Teadmine, et siinseid käske tuleb jooksutada **ilma** :code:`rando@masin:~$` eesliiteta.
 
 ------------------------
  Ligipääs ISO failidele
@@ -35,7 +35,7 @@ kausta.
 Ubuntus tuleb lisada esmalt kasutaja :code:`vboxsf` gruppi: :code:`rando@masin:~$  sudo usermod -a -G vboxsf rando`.
 Seejärel masinale taaskäivitus.
 
-Loodud jagatud kaust on Linuxis kättesaadav asukohas :code:`/media/sf_share`
+Loodud jagatud kaust on Linuxis kättesaadav asukohas :code:`/media/sf_share`.
 
     **ISO külgehaakimine**
 
@@ -99,5 +99,4 @@ Lihtsuse huvides on fail jagatud pealkirjade kaupa.
   d-i console-setup/layoutcode string ee
   d-i keyboard-configuration/layoutcode string ee
 
-
-    **Võrk**
+**Võrk**
