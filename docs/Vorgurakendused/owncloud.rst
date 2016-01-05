@@ -1,0 +1,141 @@
+==========
+ Owncloud
+==========
+Lisan Owncloud'i repository apt-get'i allikate nimekirja
+
+```
+
+echo 'deb http://download.opensuse.org/repositories/isv:/ownCloud:/community/Debian_8.0/ /' >> /etc/apt/sources.list.d/owncloud.list
+
+```
+
+Installin ```Release.key``` ja uuendan apt-get'i
+
+```
+
+cd /tmp
+wget http://download.opensuse.org/repositories/isv:ownCloud:community/Debian_8.0/Release.key
+apt-key add - < Release.key
+apt-get update
+
+```
+
+Installin ownCloud'i
+
+```
+
+apt-get install owncloud
+
+```
+
+Installiprotsessi käigus määran MySQL'ile parooli ```mysqlpass```. 
+
+## MySQL
+
+Login MySQl'i 
+
+```
+
+mysql -u root -p
+
+```
+
+Loon ownCloudi jaoks andmebaasi ja kasutaja
+
+```
+
+CREATE DATABASE owncloud;
+CREATE USER owncloud@localhost IDENTIFIED BY 'ocpass';
+GRANT ALL PRIVILEGES ON owncloud.* TO owncloud@localhost;
+flush privileges;
+quit
+
+```
+
+## PostgreSQL
+
+Alternatiivne variant MySQL'ile on kasutada PostgreSQL'i.
+
+Alustuseks tuleb ownCloud küll installeerida, kuid MySQL andmebaasi ja kasutajat mitte luua (root kasutaja parooli määramisest siiski mööda ei pääse, aga see selleks), ning mite käivitada veel ka veebiinstallerit. Seejärel installida postgresql ise, PHP PostgreSQL'i laiendus ning veebiserverile restart teha.
+
+```
+apt-get install postgresql
+apt-get install php5-pgsql
+service apache2 restart
+
+```
+
+Igaks juhuks tuleks üle vaadata ka php konfifail ```/etc/php5/conf.d/pgsql.ini``` või owncloudiga kaasa tuleva apache puhul ```/etc/php5/apache2/conf.d/20-pgsql.ini```. Fail võiks välja näha järgmine:
+
+```
+
+# configuration for PHP PostgreSQL module
+extension=pdo_pgsql.so
+extension=pgsql.so
+
+[PostgresSQL]
+pgsql.allow_persistent = On
+pgsql.auto_reset_persistent = Off
+pgsql.max_persistent = -1
+pgsql.max_links = -1
+pgsql.ignore_notice = 0
+pgsql.log_notice = 0
+
+```
+
+Loon andmebaasi ja kasutaja
+
+```
+
+psql -hlocalhost -Upostgres
+
+```
+
+või kui sedasi postgres'ile ligipääs nurjub, siis
+
+```
+
+sudo -u postgres psql postgres
+
+````
+
+ning andmebaasi ja kasutaja loomine.
+
+```
+
+CREATE USER username WITH PASSWORD 'password';
+CREATE DATABASE owncloud TEMPLATE template0 ENCODING 'UNICODE';
+ALTER DATABASE owncloud OWNER TO username;
+GRANT ALL PRIVILEGES ON DATABASE owncloud TO username;
+\q
+
+```
+
+## Owncloud'i andmekaust
+
+Loon ownCloud'ile ka üleslaetud failide hoiustamiseks andmekausta.
+
+````
+
+mkdir /var/owncloud
+chown www-data:www-data /var/owncloud
+chmod 750 /var/owncloud
+
+```
+
+Nüüd saan kliendi arvuti brauserist installatsiooni jätkata
+
+```
+
+http://10.0.0.1/owncloud
+
+```
+
+Loon admin kasutaja.
+```Advanced Settings``` alt muudan ära data kausta ja valin sobiva andmebaasimootori, ning sisestan ab. andmed.
+
+## Tulemus
+
+Owncloud töötab
+
+![](http://i.imgur.com/b2F2Nzk.png)
