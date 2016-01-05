@@ -48,7 +48,7 @@ ekraanidel võiks teha sellised valikud, loomaks meiliserverit :code:`fun.loc`.
   Internet protocols to use: ipv4
 
 
-    **Meiliserveri testimine**
+**Meiliserveri testimine**
 
 Meili saadab esmalt välisele meilikontole.
 
@@ -119,7 +119,7 @@ SquirellMail on veebipõhine meiliklient
   apt-get install squirrelmail
 
 
-        **Konfigureerimine**
+**Konfigureerimine**
 
 Kõigepealt default konf ümber kopeerida
 :code:`cp /etc/squirrelmail/apache.conf /etc/apache2/sites-available/squirrelmail.conf`.
