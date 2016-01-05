@@ -3,6 +3,9 @@
 =========
 Siin on erinevate installatsioonide & süsteemide seadistamise ajal/järgselt tekkinud dokumentatsioonid. Enamjaolt Linux.
 
+Autor Rando Hinn
+
+
 .. _user-docs:
 
 .. toctree::
@@ -10,6 +13,3 @@ Siin on erinevate installatsioonide & süsteemide seadistamise ajal/järgselt te
    :caption: Võrgurakendused
 
    Vorgurakendused/owncloud.rst
-
-
-Autor Rando Hinn
