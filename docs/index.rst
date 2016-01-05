@@ -19,6 +19,8 @@ Autor Rando Hinn
    Vorgurakendused/virtualiseerimiskeskkond.rst
    Vorgurakendused/ansible.rst
    Vorgurakendused/webmail.rst
+   Vorgurakendused/aliased.rst
+
    Vorgurakendused/owncloud.rst
 
 .. _linux-docs:
