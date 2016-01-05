@@ -16,9 +16,7 @@ on 2 võrguadapterit - nesit esimene pääseb internetti, ning teine on
  Võrgukonfiguratsioon
 ----------------------
 
-----------
- Serveris
-----------
+**Server**
 
 Failis :code:`/etc/network/interfaces` tuleb teha täiendusi. Olemasolev
 :code:`allow-hotplug eth0` tuleb muuta :code:`auto eth0`-iks. Vastasel juhul ei
@@ -27,15 +25,14 @@ suuda masin hiljem välisvõrku :code:`ping`-ida.
 Lisaks tuleb faili lisada ka teine adapter.
 
 .. code:: bash
+
   auto eth1
   iface eth1 inet static
     address 10.0.0.1
     netmask 255.255.255.0
     gateway 10.0.0.254
 
-----------
- Kliendis
-----------
+**Klient**
 
 Korrata serverimasinas tehtut. **NB! Kindlasti TULEB Kliendile määrata mingi
 muu IP aadress, nt 10.0.0.2 !!**
@@ -47,24 +44,20 @@ Võrguadapterite restart mõlemas masinas :code:`/etc/init.d/networking/restart`
 ----------
 
 
- Serveris
-==========
-
+**Server**
 
 :code:`ping`-ime klienti: :code:`ping 10.0.0.2`
 
 Kui :code:`ping` annab tulemuseks tagasi tulevad paketid, on seadistus korras.
 
 
- Kliendis
-==========
+**Klient**
 
 :code:`ping`-ime serverit: :code:`ping 10.0.0.1`
 
 Kui :code:`ping` annab tulemuseks tagasi tulevad paketid, on seadistus korras.
 
- Mõlemas
-==========
+**Mõlemad**
 
 Kuna Kõigi ülesannete tarvis on internetile ligipääsu, siis **peavad** mõlemad
 masinad olema suutelised :code:`ping`-ima ka välisvõrku. Jooksutada
