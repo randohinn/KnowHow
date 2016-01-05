@@ -53,7 +53,7 @@ Iso tuleb eraldada kausta, kus sellega tööd on võimalik teha.
  Failimuudatused
 -----------------
 
-    **isolinux**
+**isolinux**
 
 Isolinux-i menüü fail tuleb sundida automaatselt käivitama loodavat unattended
 installiprotsessi.
@@ -122,6 +122,7 @@ Lihtsuse huvides on fail jagatud pealkirjade kaupa.
   d-i passwd/user-password-again luuser insecure
   d-i passwd/auto-login boolean true
   d-i user-setup/allow-password-weak boolean true
+
 
 *Märkus: Millegipärast see ühe installatsiooni korral ei toiminud :(*
 *Märkus 2: NB! Parool tuleb ka siin sisestada kaks korda.*
