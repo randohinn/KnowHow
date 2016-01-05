@@ -89,6 +89,9 @@ pole eriti midagi pihta hakata, siis tuleb lubada *root*-ina sisse logimine.
 
 Seejärel on tarvis ssh server taaskäivitada: :code:`systemctl restart sshd`.
 
+Mõningate Võrgurakenduste dokumentatsioonide jaoks on tarvis ka kliendil ssh
+serverit (nt Ansible). Seega võiks sama korrata ka kliendis.
+
 ---------
  Tulemus
 ---------
