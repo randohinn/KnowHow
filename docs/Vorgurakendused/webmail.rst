@@ -144,7 +144,7 @@ Seejärel võib veebiserveri taaskäivitada: :code:`service apache2 restart`.
 ---------
 
 Õigesti seadistatud süsteemi puhul peaks kliendi masinast brauseriga aadressile
-:code:`http://10.0.0.1/owncloud` minnes olema näha squirrelmail, ning süsteemi
+:code:`http://10.0.0.1` minnes olema näha squirrelmail, ning süsteemi
 kasutajaga (nt. root) peaks saama ka sisse logida, ning e-maile saata nii välisvõrku,
 kui ka teistele UNIX-i kasutajatele, kellel on serveris konto.
 
