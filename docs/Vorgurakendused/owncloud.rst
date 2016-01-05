@@ -9,7 +9,7 @@
 Aluseks on Virtualiseerimiskeskkond_, kus serveri peale installeerin owncloudi, ning
 kliendi masinale installitud GUI-s saab veebibrauseriga owncloudile ligi.
 
-.. _Virtualiseerimiskeskkond: virtualiseerimiskeskkond
+.. _Virtualiseerimiskeskkond: virtualiseerimiskeskkond.html
 
 ----------
  Owncloud

@@ -9,7 +9,7 @@
 Aluseks on Virtualiseerimiskeskkond_, kus serveri peale on installeeritud Ansible,
 millega klienti hallata. Kliendil GUI puudub.
 
-.. _Virtualiseerimiskeskkond: virtualiseerimiskeskkond
+.. _Virtualiseerimiskeskkond: virtualiseerimiskeskkond.html
 
 ------
  FQDN
