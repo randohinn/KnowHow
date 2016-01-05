@@ -78,7 +78,75 @@ Dovecot on IMAP ja POP3 server. Installimine:
 
 Failis :code:`/etc/dovecot/conf.d/10-master.conf` teha järgnevad muudatused.
 
-.. code-block:: bash
-  ::linenos:
-  
+Real 19.
+
+.. code:: bash
+
   post: 143
+
+
+Real 40.
+
+.. code:: bash
+
+  port: 110
+
+Real 96 algav bracket välja kommenteerida, tulemus jääb selline.
+
+.. code:: bash
+
+  unix_listener /var/spool/postfix/private/auth {
+      mode = 0660
+      user = postfix
+      group = postfix
+  }
+
+--------------
+ SquirellMail
+--------------
+
+SquirellMail on veebipõhine meiliklient
+
+**Severis**
+
+    **Installeerimine**
+
+.. code:: bash
+
+  apt-get install apache2
+  a2dissite 000-default
+  a2dissite default-ssl
+  apt-get install squirrelmail
+
+
+  **Konfigureerimine**
+
+Kõigepealt default konf ümber kopeerida
+:code:`cp /etc/squirrelmail/apache.conf /etc/apache2/sites-available/squirrelmail.conf`.
+
+Seejärel konfiguratsiooni muuta. Ehk failis :code:`/etc/apache2/sites-available/squirrelmail.conf`
+
+Rida 1 kustutada.
+
+Read 21-24 eemaldada kommentaarid (eest kustutada # märk), ning lisada IP aadressid.
+
+.. code:: bash
+
+  <VirtualHost 10.0.0.1>
+      DocumentRoot /usr/share/squirrelmail
+      ServerName 10.0.0.1
+  </VirtualHost>
+
+Seejärel võib veebiserveri taaskäivitada: :code:`service apache2 restart`.
+
+---------
+ Tulemus
+---------
+
+Õigesti seadistatud süsteemi puhul peaks kliendi masinast brauseriga aadressile
+:code:`http://10.0.0.1/owncloud` minnes olema näha squirrelmail, ning süsteemi
+kasutajaga (nt. root) peaks saama ka sisse logida, ning e-maile saata nii välisvõrku,
+kui ka teistele UNIX-i kasutajatele, kellel on serveris konto.
+
+.. image:: http://i.imgur.com/7XO339W.png
+.. image:: http://i.imgur.com/zWKPLA0.png
