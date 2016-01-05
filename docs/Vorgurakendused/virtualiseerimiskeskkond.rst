@@ -32,9 +32,9 @@ Lisaks tuleb faili lisada ka teine adapter.
         netmask 255.255.255.0
         gateway 10.0.0.254
 
+
  Kliendis
 ==========
-
 
 Korrata serverimasinas tehtut. **NB! Kindlasti TULEB Kliendile määrata mingi
 muu IP aadress, nt 10.0.0.2 !!**
