@@ -135,8 +135,7 @@ Lihtsuse huvides on fail jagatud pealkirjade kaupa.
   d-i clock-setup/ntp boolean true
   d-i clock-setup/ntp-server string ntp.example.com
 
- *Märkus: Esimese ja viimase sätte muutmine võib tekitada tõsiseid anomaaliaid
- süsteemi töös!*
+*Märkus: Esimese ja viimase sätte muutmine võib tekitada tõsiseid anomaaliaid süsteemi töös!*
 
 **Partitsioonid**
 
