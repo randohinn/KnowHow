@@ -12,4 +12,5 @@ Autor Rando Hinn
    :maxdepth: 2
    :caption: Võrgurakendused
 
+   Vorgurakendused/virtualiseerimiskeskkond.rst
    Vorgurakendused/owncloud.rst
