@@ -99,4 +99,5 @@ Lihtsuse huvides on fail jagatud pealkirjade kaupa.
   d-i console-setup/layoutcode string ee
   d-i keyboard-configuration/layoutcode string ee
 
-  **Võrk**
+
+    **Võrk**
