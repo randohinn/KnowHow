@@ -25,7 +25,7 @@ suuda masin hiljem välisvõrku :code:`ping`-ida.
 
 Lisaks tuleb faili lisada ka teine adapter.
 
-.. code::
+.. code:: bash
     auto eth1
     iface eth1 inet static
         address 10.0.0.1
