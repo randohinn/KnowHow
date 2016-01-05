@@ -100,3 +100,89 @@ Lihtsuse huvides on fail jagatud pealkirjade kaupa.
   d-i keyboard-configuration/layoutcode string ee
 
 **Võrk**
+
+.. code:: bash
+
+  d-i netcfg/enable boolean false
+  d-i netcfg/choose_interface select auto
+  d-i netcfg/get_hostname string ubuntu
+  d-i netcfg/get_domain string ubuntu.local
+  d-i netcfg/wireless_wep string
+  d-i hw-detect/load_firmware boolean true
+
+*Märkus: Kui DHCP serveril on Teie süsteemile anda omapoolne hostname ja domeen,
+  siis seda ta ka teeb ning sel juhul siin määratud sätted ei rakendu.*
+
+**Tavakasutaja loomine**
+
+.. code: bash
+
+  d-i passwd/user-fullname string Juuser Luuser
+  d-i passwd/username string juuser
+  d-i passwd/user-password luuser insecure
+  d-i passwd/user-password-again luuser insecure
+  d-i passwd/auto-login boolean true
+  d-i user-setup/allow-password-weak boolean true
+
+*Märkus: Millegipärast see ühe installatsiooni korral ei toiminud :(*
+*Märkus 2: NB! Parool tuleb ka siin sisestada kaks korda.*
+
+** Kell ja Ajavööndid**
+
+.. code:: bash
+
+  d-i clock-setup/utc boolean true
+  d-i time/zone string Europe/Tallinn
+  d-i clock-setup/ntp boolean true
+  d-i clock-setup/ntp-server string ntp.example.com
+
+ *Märkus: Esimese ja viimase sätte muutmine võib tekitada tõsiseid anomaaliaid
+ süsteemi töös!*
+
+**Partitsioonid**
+
+.. code:: bash
+
+  d-i partman-auto/disk string /dev/sda
+  d-i partman-auto/method string regular
+  d-i partman-auto/choose_recipe select atomic
+  d-i partman/confirm_write_new_label boolean true
+  d-i partman-md/confirm boolean true
+  d-i partman-partitioning/confirm_write_new_label boolean true
+  d-i partman/choose_partition select finish
+  d-i partman/confirm boolean true
+  d-i partman/confirm_nooverwrite boolean true
+  d-i partman/mount_style select uuid
+
+**Süsteemi install, rakenduspaketid**
+
+.. code:: bash
+
+  d-i base-installer/kernel/image string linux-image-486
+  d-i apt-setup/services-select multiselect security, updates
+  d-i apt-setup/security_host string security.debian.org
+  tasksel tasksel/first multiselect standard
+  popularity-contest popularity-contest/participate boolean false
+  d-i finish-install/reboot_in_progress note
+  d-i debian-installer/exit/poweroff boolean true
+
+*Märkus: Popularity Contest on Ubuntu kasutajastatistika kogumisteenus.*
+
+-----------------------
+ ISO taasgenereerimine
+-----------------------
+
+Alljärgnev käsk genereerib automaatse installi iso loodud jagatud kausta,
+failina ```autoinstall.iso```.
+
+.. code:: bash
+
+rando@masin:~$ cd ubuntu_files
+rando@masin:~/ubuntu_files$ mkisofs -D -r -V “$IMAGE_NAME” -cache-inodes -J -l -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -o /media/sf_share/autoinstall.iso .
+
+---------
+ Tulemus
+---------
+
+Ülalkirjeldatud protsessiga valmib käivitatav :code:`.iso` fail, mille pealt
+süsteemi käivitades installitakse automaatselt Ubuntu Desktop OS.
