@@ -3,54 +3,47 @@
 ==========
 Lisan Owncloud'i repository apt-get'i allikate nimekirja
 
-```
+.. code:: bash
 
-echo 'deb http://download.opensuse.org/repositories/isv:/ownCloud:/community/Debian_8.0/ /' >> /etc/apt/sources.list.d/owncloud.list
+  echo 'deb http://download.opensuse.org/repositories/isv:/ownCloud:/community/Debian_8.0/ /' >> /etc/apt/sources.list.d/owncloud.list
 
-```
 
 Installin ```Release.key``` ja uuendan apt-get'i
 
-```
+.. code:: bash
 
-cd /tmp
-wget http://download.opensuse.org/repositories/isv:ownCloud:community/Debian_8.0/Release.key
-apt-key add - < Release.key
-apt-get update
+  cd /tmp
+  wget http://download.opensuse.org/repositories/isv:ownCloud:community/Debian_8.0/Release.key
+  apt-key add - < Release.key
+  apt-get update
 
-```
 
 Installin ownCloud'i
 
-```
+.. code:: bash
 
-apt-get install owncloud
+  apt-get install owncloud
 
-```
 
-Installiprotsessi käigus määran MySQL'ile parooli ```mysqlpass```. 
+Installiprotsessi käigus määran MySQL'ile parooli ```mysqlpass```.
 
 ## MySQL
 
-Login MySQl'i 
+Login MySQl'i
 
-```
+.. code:: bash
 
-mysql -u root -p
-
-```
+  mysql -u root -p
 
 Loon ownCloudi jaoks andmebaasi ja kasutaja
 
-```
+.. code:: bash
 
-CREATE DATABASE owncloud;
-CREATE USER owncloud@localhost IDENTIFIED BY 'ocpass';
-GRANT ALL PRIVILEGES ON owncloud.* TO owncloud@localhost;
-flush privileges;
-quit
-
-```
+  CREATE DATABASE owncloud;
+  CREATE USER owncloud@localhost IDENTIFIED BY 'ocpass';
+  GRANT ALL PRIVILEGES ON owncloud.* TO owncloud@localhost;
+  flush privileges;
+  quit
 
 ## PostgreSQL
 
@@ -58,12 +51,11 @@ Alternatiivne variant MySQL'ile on kasutada PostgreSQL'i.
 
 Alustuseks tuleb ownCloud küll installeerida, kuid MySQL andmebaasi ja kasutajat mitte luua (root kasutaja parooli määramisest siiski mööda ei pääse, aga see selleks), ning mite käivitada veel ka veebiinstallerit. Seejärel installida postgresql ise, PHP PostgreSQL'i laiendus ning veebiserverile restart teha.
 
-```
-apt-get install postgresql
-apt-get install php5-pgsql
-service apache2 restart
+.. code:: bash
 
-```
+  apt-get install postgresql
+  apt-get install php5-pgsql
+  service apache2 restart
 
 Igaks juhuks tuleks üle vaadata ka php konfifail ```/etc/php5/conf.d/pgsql.ini``` või owncloudiga kaasa tuleva apache puhul ```/etc/php5/apache2/conf.d/20-pgsql.ini```. Fail võiks välja näha järgmine:
 
