@@ -13,4 +13,5 @@ Autor Rando Hinn
    :caption: Võrgurakendused
 
    Vorgurakendused/virtualiseerimiskeskkond.rst
+   Vorgurakendused/ansible.rst
    Vorgurakendused/owncloud.rst

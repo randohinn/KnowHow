@@ -2,6 +2,19 @@
  Owncloud
 ==========
 
+------
+ Info
+------
+
+Aluseks on Virtualiseerimiskeskkond_, kus serveri peale installeerin owncloudi, ning
+kliendi masinale installitud GUI-s saab veebibrauseriga owncloudile ligi.
+
+.. _Virtualiseerimiskeskkond: virtualiseerimiskeskkond
+
+----------
+ Owncloud
+----------
+
 Lisan Owncloud'i repository apt-get'i allikate nimekirja
 
 .. code:: bash
