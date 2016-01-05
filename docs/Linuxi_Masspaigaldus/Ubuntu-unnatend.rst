@@ -127,7 +127,7 @@ Lihtsuse huvides on fail jagatud pealkirjade kaupa.
 *Märkus: Millegipärast see ühe installatsiooni korral ei toiminud :(*
 *Märkus 2: NB! Parool tuleb ka siin sisestada kaks korda.*
 
-** Kell ja Ajavööndid**
+**Kell ja Ajavööndid**
 
 .. code:: bash
 
