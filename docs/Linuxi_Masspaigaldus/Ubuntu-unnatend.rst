@@ -114,7 +114,7 @@ Lihtsuse huvides on fail jagatud pealkirjade kaupa.
 
 **Tavakasutaja loomine**
 
-.. code: bash
+.. code:: bash
 
   d-i passwd/user-fullname string Juuser Luuser
   d-i passwd/username string juuser
@@ -122,7 +122,6 @@ Lihtsuse huvides on fail jagatud pealkirjade kaupa.
   d-i passwd/user-password-again luuser insecure
   d-i passwd/auto-login boolean true
   d-i user-setup/allow-password-weak boolean true
-
 
 *Märkus: Millegipärast see ühe installatsiooni korral ei toiminud :(*
 *Märkus 2: NB! Parool tuleb ka siin sisestada kaks korda.*
