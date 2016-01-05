@@ -9,7 +9,7 @@ Lisan Owncloud'i repository apt-get'i allikate nimekirja
   echo 'deb http://download.opensuse.org/repositories/isv:/ownCloud:/community/Debian_8.0/ /' >> /etc/apt/sources.list.d/owncloud.list
 
 
-Installin ```Release.key``` ja uuendan apt-get'i
+Installin :code:`Release.key` ja uuendan apt-get'i
 
 .. code:: bash
 
@@ -26,7 +26,7 @@ Installin ownCloud'i
   apt-get install owncloud
 
 
-Installiprotsessi käigus määran MySQL'ile parooli ```mysqlpass```.
+Installiprotsessi käigus määran MySQL'ile parooli :code:`mysqlpass`.
 
 -------
  MySQL
@@ -62,7 +62,7 @@ Alustuseks tuleb ownCloud küll installeerida, kuid MySQL andmebaasi ja kasutaja
   apt-get install php5-pgsql
   service apache2 restart
 
-Igaks juhuks tuleks üle vaadata ka php konfifail ```/etc/php5/conf.d/pgsql.ini``` või owncloudiga kaasa tuleva apache puhul ```/etc/php5/apache2/conf.d/20-pgsql.ini```. Fail võiks välja näha järgmine:
+Igaks juhuks tuleks üle vaadata ka php konfifail :code:`/etc/php5/conf.d/pgsql.ini` või owncloudiga kaasa tuleva apache puhul :code:`/etc/php5/apache2/conf.d/20-pgsql.ini`. Fail võiks välja näha järgmine:
 
 .. code:: ini
 
