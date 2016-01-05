@@ -72,7 +72,7 @@ Terve faili sisu kustutada, ja asendada alljärgnevaga.
   kernel /casper/vmlinuz
   append file=/cdrom/preseed/ubuntu.seed initrd=/casper/initrd.lz automatic-ubiquity quiet
 
-  **langlist**
+**langlist**
 
 Ubuntu vaikimisi laeb alla sigapalju keeli. Limiteerime keele vaid inglise keele
 peale, kustutades failis :code:`isolinux/langlist` ära kogu sisu, ning asendades selle
@@ -110,8 +110,7 @@ Lihtsuse huvides on fail jagatud pealkirjade kaupa.
   d-i netcfg/wireless_wep string
   d-i hw-detect/load_firmware boolean true
 
-*Märkus: Kui DHCP serveril on Teie süsteemile anda omapoolne hostname ja domeen,
-  siis seda ta ka teeb ning sel juhul siin määratud sätted ei rakendu.*
+*Märkus: Kui DHCP serveril on Teie süsteemile anda omapoolne hostname ja domeen, siis seda ta ka teeb ning sel juhul siin määratud sätted ei rakendu.*
 
 **Tavakasutaja loomine**
 
