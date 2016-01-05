@@ -173,7 +173,7 @@ Lihtsuse huvides on fail jagatud pealkirjade kaupa.
 -----------------------
 
 Alljärgnev käsk genereerib automaatse installi iso loodud jagatud kausta,
-failina ```autoinstall.iso```.
+failina :code:`autoinstall.iso`.
 
 .. code:: bash
 
