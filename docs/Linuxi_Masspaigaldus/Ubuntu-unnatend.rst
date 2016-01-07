@@ -10,6 +10,7 @@ Tegemist Ubuntu Unattended Installeerimise iso loomise dokumentatsiooniga.
 Loodud :code:`Ubuntu 14.04 LTS Desktop` versioonile. Ühilduvus hilisemate versioonidega
 ei ole garanteeritud.
 
+
 ----------------
  Eelnevalt vaja
 ----------------
@@ -23,7 +24,7 @@ ei ole garanteeritud.
 
 **Windowsis**
 
-Kasutades HowToGeek_i õpetust, tuleb seadistada jagatud *machine* kaust.
+Kasutades HowToGeek_ i õpetust, tuleb seadistada jagatud *machine* kaust.
 
 .. _HowToGeek: http://www.howtogeek.com/189974/how-to-share-your-computers-files-with-a-virtual-machine/
 
