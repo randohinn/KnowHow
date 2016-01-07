@@ -7,7 +7,7 @@
 ------
 
 Aluseks on Virtualiseerimiskeskkond_, kus serveri peale on installeeritud Network
-Alias'i kasutav apache2, kliendi GUI-st saab brauseriga kehele eri IP-le minnes
+Alias'i kasutav apache2, kliendi GUI-st saab brauseriga kahele eri IP-le minnes
 kahte eri lehte, mis mõlemad on ühes ja samas serveris. Antud näites kuvab üks
 minu ees- ja teine perekonnanime.
 
