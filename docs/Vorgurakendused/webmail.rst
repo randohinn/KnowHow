@@ -18,17 +18,17 @@ peab server olema võimaline maili saatma ka välisvõrku.
 
 **Serveris**
 
-    **Mailname**
+**Mailname**
 Alustuseks tuleb ära muuta süsteemi mailname. Failis :code:`/etc/mailname`
 muuta seal olev väärtus :code:`mail`-iks.
 
-    **Meiliserver**
+**Meiliserver**
 
 Meiliserverina kasutusel postifx. Install :code:`apt-get install postfix`. Installimise
 ajal konfguratsioonisäteteks valida :code:`No configuration`, niiviisi on hiljem
 võimalik konfigureerida rohkem seadeid.
 
-    **Meiliserveri konf**
+**Meiliserveri konf**
 
 Ümberkonfigureerimise alustamiseks :code:`dpkg-reconfigure postfix`. Järgnevatel
 ekraanidel võiks teha sellised valikud, loomaks meiliserverit :code:`fun.loc`.
@@ -74,7 +74,7 @@ Kui e-mail jõudis kohale, on süsteem õigesti konfigureeritud.
 Dovecot on IMAP ja POP3 server. Installimine:
 :code:`apt-get install dovecot-core dovecot-pop3d dovecot-imapd`.
 
-    **Konfigureerimine**
+**Konfigureerimine**
 
 Failis :code:`/etc/dovecot/conf.d/10-master.conf` teha järgnevad muudatused.
 
@@ -109,7 +109,7 @@ SquirellMail on veebipõhine meiliklient
 
 **Severis**
 
-    **Installeerimine**
+**Installeerimine**
 
 .. code:: bash
 

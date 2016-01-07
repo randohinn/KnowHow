@@ -37,7 +37,7 @@ Seejärel masinale taaskäivitus.
 
 Loodud jagatud kaust on Linuxis kättesaadav asukohas :code:`/media/sf_share`.
 
-    **ISO külgehaakimine**
+**ISO külgehaakimine**
 
 Iso tuleb eraldada kausta, kus sellega tööd on võimalik teha.
 

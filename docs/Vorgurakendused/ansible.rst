@@ -33,7 +33,7 @@ Seejärel tuleb server taaskäivitada.
 
 **Serveris**
 
-    **Ansible installeerimine.**
+**Ansible installeerimine.**
 
 .. code:: bash
 
@@ -48,7 +48,7 @@ Seejärel tuleb server taaskäivitada.
 kuid sellest võib :code:`enter`-iga läbi joosta - millegi sisestamine vajalik
 ei ole. Tulemusena tekib vaikeasukohas olev paroolita fail.
 
-    **Võtmete lisamine**
+**Võtmete lisamine**
 
 Äsja loodud võtmed tuleb ssh agendile lisada.
 
@@ -60,7 +60,7 @@ ei ole. Tulemusena tekib vaikeasukohas olev paroolita fail.
 Seejärel saab avaliku võtme kopeerida üle võrgu kliendi arvutisse:
 :code:`ssh-copy-id -i ~/.ssh/id_rsa.pub root@10.0.0.2`
 
-    **Ansible konfigureerimine**
+**Ansible konfigureerimine**
 
 Ansible-le tuleb lisada kliendid, need lisatakse faili :code:`/etc/ansible/hosts`.
 Antud näite puhul tuleb faili lõppu lisada järgmised read.
