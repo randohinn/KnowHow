@@ -70,8 +70,7 @@ näha, on kõik OK.
  Owncloud
 ----------
 
-Siin läheb asi tiba keerulisemaks. Luua tuleb fail2ban filter, failina
-:code:`/etc/fail2ban/filter.d/owncloud.conf`. Faili sisuks järgnev.
+Siin läheb asi tiba keerulisemaks. Luua tuleb fail2ban filter, failina :code:`/etc/fail2ban/filter.d/owncloud.conf`. Faili sisuks järgnev.
 
 .. code:: bash
 
