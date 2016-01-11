@@ -6,7 +6,7 @@
  Info
 ------
 
-Aluseks on Virtualiseerimiskeskkond_ & Postfix-i osa Mail_ist, kus serveri peale on installeeritud Nagios ning Apache2&php5(antud dokk installib apache ja php5 automaatselt), nagios seadistatud
+Aluseks on Virtualiseerimiskeskkond_ & Postfix-i osa Mail_ ist, kus serveri peale on installeeritud Nagios ning Apache2&php5(antud dokk installib apache ja php5 automaatselt), nagios seadistatud
 monitoorima mingi muu VM-i pingidele vastamist Antud näites seadistatud monitoorima kliendimasinat. Kui antud masin ei vasta 1 minuti jooksul pingimistele, saadetakse
 e-kiri. Lisaks pääseb vaid klientmasinast ligi Nagiose liidesele veebikeskkonnas.
 
