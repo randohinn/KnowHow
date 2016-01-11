@@ -37,7 +37,7 @@ Lisaks tuleb faili lisada ka teine adapter.
 Korrata serverimasinas tehtut. **NB! Kindlasti TULEB Kliendile määrata mingi
 muu IP aadress, nt 10.0.0.2 !!**
 
-Võrguadapterite restart mõlemas masinas :code:`/etc/init.d/networking/restart`
+Võrguadapterite restart mõlemas masinas :code:`/etc/init.d/networking restart`
 
 ----------
  Kontroll

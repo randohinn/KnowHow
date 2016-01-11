@@ -22,6 +22,7 @@ Autor Rando Hinn
    Vorgurakendused/aliased.rst
    Vorgurakendused/owncloud.rst
    Vorgurakendused/Fail2Ban.rst
+   Vorgurakendused/nagios.rst
 
 
 .. _linux-docs:
