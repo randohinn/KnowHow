@@ -157,7 +157,7 @@ Kompileerimine ja install
   make install-xinetd
   make install-daemon-config
 
-** Konfiguratsioon **
+**Konfiguratsioon**
 
 Piirame esmalt ligipääsu NRPE-le nii, et ainult nagiose server saaks sellele ligi. Modifitseerida tuleb faili :code:`/etc/xinetd.d/nrpe`
 
@@ -213,7 +213,7 @@ Nüüd on lõpuks võimalik käivitada nii nagios kui apache2.
 
 Laseme nagiosel automaatselt käivituda koos serveriga: :code:`ln -s /etc/init.d/nagios /etc/rcS.d/S99nagios`.
 
-** Veebiliidese ligipääsu piiramine **
+**Veebiliidese ligipääsu piiramine**
 
 Seda võib teha, aga ei pea. Hetkel teeme. Failis :code:`/etc/apache2/sites-available/nagios.conf` tuleb teha järgnevad muudatus.
 
@@ -242,7 +242,7 @@ Teenuste restart
   service nagios restart
   service apache2 restart
 
-** Veebiliidesele ligipääs **
+**Veebiliidesele ligipääs**
 
 Nüüd peaks kliendi masinast, minnes brauseriga aadressile: :code:`http://10.0.0.1/nagios` olema olemas ligipääs nagiose veebiliidesele, seda
 eelnevalt loodud kasutajanime ja parooliga. Vasakult Paneelilt **Hosts** valides, peaks näha olema, et hetkel monitoorib nagios vaid iseennast.
@@ -301,8 +301,8 @@ Monitooringu käivitamiseks :code:`service nagios restart`. Veebiserveris peaks 
 
 Nagios töötab ja saadab e-maile seni, kuni klient taas püsti on.
 
-.. image: http://i.imgur.com/YdNaCyU.png
+.. image:: http://i.imgur.com/YdNaCyU.png
 
-.. image: http://i.imgur.com/ulvcl6J.png
+.. image:: http://i.imgur.com/ulvcl6J.png
 
-.. image: http://i.imgur.com/2so2YiY.png
+.. image:: http://i.imgur.com/2so2YiY.png
