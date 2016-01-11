@@ -17,7 +17,7 @@ e-kiri. Lisaks pääseb vaid klientmasinast ligi Nagiose liidesele veebikeskkonn
  Nagios
 --------
 
-* Kasutaja ja grupp *
+**Kasutaja ja grupp**
 
 Luua Nagiosele kasutaja ning grupi.
 
@@ -26,8 +26,8 @@ Luua Nagiosele kasutaja ning grupi.
    useradd nagios
    groupadd nagcmd
    usermod -a -G nagcmd nagios
-  
-** Eeldused **
+
+**Eeldused**
 
 Kompileerime oma süsteemis uusima nagiosi. Selleks on vaja aga eelnevalt teatud pakette. Installi need.
 
@@ -35,8 +35,8 @@ Kompileerime oma süsteemis uusima nagiosi. Selleks on vaja aga eelnevalt teatud
 
    apt-get update
    apt-get install curl  build-essential libgd2-xpm-dev openssl libssl-dev xinetd apache2 php5 libapache2-mod-php5 apache2-utils unzip
-  
-** Nagios Core **
+
+**Nagios Core**
 
 Uusima Nagios Core saamiseks tuleks külastada Nagiosi Allalaadimislehte_, ning kopeerida sealt uusima allalaadimise lingi (Antud dokumentatsiooni
 kirjutamise ajal 4.1.1.tar.gz).
@@ -49,23 +49,23 @@ Laadida saadud lingilt alla Nagios Core arhiivi.
 
   cd ~
   curl -L -O https://assets.nagios.com/downloads/nagioscore/releases/nagios-4.1.1.tar.gz
-  
+
 Arhiiv tuleb lahti pakkida, ning saadud kausta siseneda.
 
 .. code:: bash
 
   tar xvf nagios-*.tar.gz
   cd nagios-*
-  
-** Nagios Core kompileerimine **
+
+**Nagios Core kompileerimine**
 
 Enne kompileerimise alustamist, peab selle kompileerimisprotsessi tarbeks konfigureerima, söötes
 konfiguratsioonile ette eelnevalt loodud kasutaja ja grupi.
 
 .. code:: bash
 
-  ./configure --with-nagios-group=nagios --with-command-group=nagcmd 
-  
+  ./configure --with-nagios-group=nagios --with-command-group=nagcmd
+
 Ning nüüd võib kompileerida.
 
 .. code:: bash
@@ -100,22 +100,22 @@ Ka Nagiose pluginad kompileerime süsteemis. Otsida allalaadimislehelt_ uusim li
 
   cd ~
   curl -L -O http://nagios-plugins.org/download/nagios-plugins-2.1.1.tar.gz
-  
+
 Lahti tuleb pakkida ka see arhiiv.
 
 .. code:: bash
 
   tar xvf nagios-plugins-*.tar.gz
   cd nagios-plugins-*
-  
-** Kompileerimine **
+
+**Kompileerimine**
 
 Konfigureerida tuleb ka see kompileerimisprotsess.
 
 .. code:: bash
 
   ./configure --with-nagios-user=nagios --with-nagios-group=nagios --with-openssl
-  
+
 Nüüd võib kompileerida ja installida.
 
 .. code:: bash
@@ -140,7 +140,7 @@ Alla laadimine ja lahtipakkimine.
   tar xvf nrpe-*.tar.gz
   cd nrpe-*
 
-** Kompileerimine **
+**Kompileerimine**
 
 Kompileerimisprotsessi konfigureerimine.
 
@@ -165,7 +165,7 @@ Piirame esmalt ligipääsu NRPE-le nii, et ainult nagiose server saaks sellele l
 
   only_from = 127.0.0.1 10.0.0.1
 
-Seejärel tuleb taaskäivitada ligipääsuga tegelev teenus: :code:` service xinetd restart`. 
+Seejärel tuleb taaskäivitada ligipääsuga tegelev teenus: :code:` service xinetd restart`.
 
 --------------------------
  Nagiose konfigureerimine
@@ -180,7 +180,7 @@ Järgnevalt tuleks konfigureerida nagiose e-maili saatmine. Failis :code:`/usr/l
 .. code:: bash
 
   email                           email@provider.domeen
-  
+
 -------------------------
  Apache konfigureerimine
 -------------------------
@@ -197,20 +197,20 @@ Nagiose veebiliidesel on vaja ligipääsuks ka kasutajat & parooli. Nende loomin
 .. code:: bash
 
   htpasswd -c /usr/local/nagios/etc/htpasswd.users nagiosadmin
-  
-Nagiose konfiguratsioonifail tuleb link-ida apache hostitavate saitide kausta. 
+
+Nagiose konfiguratsioonifail tuleb link-ida apache hostitavate saitide kausta.
 
 .. code:: bash
 
   ln -s /etc/apache2/sites-available/nagios.conf /etc/apache2/sites-enabled/
-  
+
 Nüüd on lõpuks võimalik käivitada nii nagios kui apache2.
 
 .. code:: bash
 
   service nagios start
   service apache2 restart
-  
+
 Laseme nagiosel automaatselt käivituda koos serveriga: :code:`ln -s /etc/init.d/nagios /etc/rcS.d/S99nagios`.
 
 ** Veebiliidese ligipääsu piiramine **
@@ -223,7 +223,7 @@ Need read välja kommenteerida (Lisada #):
 
   Order allow,deny
   Allow from all
-  
+
 Nendelt ridadelt kommentaar eemaldada (# ära). :code:`Allow from` reale lisada oma kliendi privaatne IP.
 
 
@@ -232,9 +232,9 @@ Nendelt ridadelt kommentaar eemaldada (# ära). :code:`Allow from` reale lisada 
   Order deny,allow
   Deny from all
   Allow from 127.0.0.1 10.0.0.2
-  
+
 Antud muudatused tuleb teha failis kahes kohas!
-  
+
 Teenuste restart
 
 .. code:: bash
@@ -257,13 +257,13 @@ Kliendiarvutis tuleb installeerida monitoorimiseks nagios plugins ja nrpe server
 
   apt-get update
   apt-get install nagios-plugins nagios-nrpe-server
-  
+
 Lubame ligipääsu meie nagios serverilt failis :code:`/etc/nagios/nrpe.cfg` Reale :code:`allowed_hosts` lisada nagios serveri IP ja reale :code:`server_address` selle masina privaatne IP
 
 .. code:: bash
-  
+
   allowed_hosts=127.0.0.1,10.0.0.1
-  
+
 NRPE server vajab siinkohal taaskäivitust: :code:`service nagios-nrpe-server restart`
 
 ----------------
@@ -281,18 +281,18 @@ Faili sisu on järgnev.
     host_name                       klient
     alias                           Kliendimasin
     address                         10.0.0.2
-    max_check_attempts              3           
-    normal_check_interval           1         
-    retry_check_interval            1           
-    notification_interval           1   
-  }  
+    max_check_attempts              3
+    normal_check_interval           1
+    retry_check_interval            1
+    notification_interval           1
+  }
   define service {
     use                             generic-service
     host_name                       klient
     service_description             PING
     check_command                   check_ping!100.0,20%!500.0,60%
-  } 
-  
+  }
+
 Monitooringu käivitamiseks :code:`service nagios restart`. Veebiserveris peaks nüüd olema näha uus host.
 
 ---------
