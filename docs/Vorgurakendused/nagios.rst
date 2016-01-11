@@ -11,7 +11,7 @@ monitoorima mingi muu VM-i pingidele vastamist Antud näites seadistatud monitoo
 e-kiri. Lisaks pääseb vaid klientmasinast ligi Nagiose liidesele veebikeskkonnas.
 
 .. _Virtualiseerimiskeskkond: virtualiseerimiskeskkond.html
-.. _Mail: mail.html#meiliserver
+.. _Mail: webmail.html#meiliserver
 
 --------
  Nagios
