@@ -247,9 +247,9 @@ Teenuste restart
 Nüüd peaks kliendi masinast, minnes brauseriga aadressile: :code:`http://10.0.0.1/nagios` olema olemas ligipääs nagiose veebiliidesele, seda
 eelnevalt loodud kasutajanime ja parooliga. Vasakult Paneelilt **Hosts** valides, peaks näha olema, et hetkel monitoorib nagios vaid iseennast.
 
----------------------
- Kliendi monitooring
----------------------
+----------------------
+ Kliendi eelseadistus
+----------------------
 
 Kliendiarvutis tuleb installeerida monitoorimiseks nagios plugins ja nrpe server, sedapuhku apt-get'iga.
 
@@ -285,6 +285,7 @@ Faili sisu on järgnev.
     normal_check_interval           1
     retry_check_interval            1
     notification_interval           1
+	contact_groups                  admins
   }
   define service {
     use                             generic-service
@@ -295,13 +296,81 @@ Faili sisu on järgnev.
 
 Monitooringu käivitamiseks :code:`service nagios restart`. Veebiserveris peaks nüüd olema näha uus host.
 
+----------------------------------------
+ Apache ja MySQL monitoorimise lisamine
+----------------------------------------
+
+Teen ühe Virtualiseerimiskeskkonna_ juurde, kuhu installin LAMP Stack-i. IP 10.0.0.3.
+
+.. _Virtualiseerimiskeskkonna: virtualiseerimiskeskkond.html
+
+**MySQL**
+
+MySQL jookseb vaikimisi pordil 3306, aga ip-l 127.0.0.1. Seda tuleb LAMP serveris muuta, kommenteerides failis :code:`/etc/mysql/my.cnf` välja (# ette) rea :code:`bind-address = 127.0.0.1`.
+Lisaks tuleb lubada nagios kasutajal ligipääs igaltpoolt. Teen monitoorimiseks ka testandmebaasi.
+
+.. code:: bash
+
+  mysql -u root –p
+  CREATE USER 'nagios'@'localhost' IDENTIFIED BY 'nagios-pass';
+  GRANT ALL PRIVILEGES ON *.* TO 'nagios'@'localhost';
+  CREATE USER 'nagios'@'%' IDENTIFIED BY 'nagios-pass';
+  GRANT ALL PRIVILEGES ON *.* TO 'nagios'@'%';
+  FLUSH PRIVILEGES;
+  exit;
+  
+**Nagios teenuste lisamine**
+
+Ei monitoori enam klienti, kirjutan klient.cfg faili üle
+
+Serverifaili sisu võiks olla.
+
+.. code:: bash
+
+  define host {
+	use                             linux-server
+    host_name                       lambikas
+    alias                           Lamp
+    address                         10.0.0.3
+    max_check_attempts              3
+    normal_check_interval           1
+    retry_check_interval            1
+    notification_interval           1
+	contact_groups                  admins
+
+  }
+  define service {
+    use                             generic-service
+    host_name                       lambikas
+    service_description             MySQL Connectivity
+    check_command                   check_tcp!3306
+	contact_groups                  admins
+
+  }
+  
+  define service {
+    use                             generic-service
+    host_name                       lambikas
+    service_description             Apache server
+    check_command                   check_http
+	contact_groups                  admins
+
+  }
+
+.. code:: bash
+
+  service nagios restart
+
+  
 ---------
  Tulemus
 ---------
 
-Nagios töötab ja saadab e-maile seni, kuni klient taas püsti on.
+Nagios töötab ja saadab e-maile seni, kuni server ise / serveris Apache või MySQL taas püsti on.
 
-.. image:: http://i.imgur.com/YdNaCyU.png
+.. image:: http://i.imgur.com/hEwi8XE.png
+
+.. image:: http://i.imgur.com/fEh2ovH.png
 
 .. image:: http://i.imgur.com/ulvcl6J.png
 

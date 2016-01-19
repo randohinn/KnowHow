@@ -20,6 +20,7 @@ Autor Rando Hinn
    Vorgurakendused/ansible.rst
    Vorgurakendused/webmail.rst
    Vorgurakendused/aliased.rst
+   Vorgurakendused/dns.rst
    Vorgurakendused/owncloud.rst
    Vorgurakendused/Fail2Ban.rst
    Vorgurakendused/nagios.rst
