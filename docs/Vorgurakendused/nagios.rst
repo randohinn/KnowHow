@@ -114,7 +114,7 @@ Konfigureerida tuleb ka see kompileerimisprotsess.
 
 .. code:: bash
 
-  ./configure --with-nagios-user=nagios --with-nagios-group=nagios --with-openssl
+  ./configure --with-nagios-user=nagios --with-nagios-group=nagcmd --with-openssl
 
 Nüüd võib kompileerida ja installida.
 
@@ -146,7 +146,7 @@ Kompileerimisprotsessi konfigureerimine.
 
 .. code:: bash
 
-  ./configure --enable-command-args --with-nagios-user=nagios --with-nagios-group=nagios --with-ssl=/usr/bin/openssl --with-ssl-lib=/usr/lib/x86_64-linux-gnu
+  ./configure --enable-command-args --with-nagios-user=nagios --with-nagios-group=nagcmd --with-ssl=/usr/bin/openssl --with-ssl-lib=/usr/lib/x86_64-linux-gnu
 
 Kompileerimine ja install
 
@@ -318,7 +318,7 @@ Lisaks tuleb lubada nagios kasutajal ligipääs igaltpoolt. Teen monitoorimiseks
   GRANT ALL PRIVILEGES ON *.* TO 'nagios'@'%';
   FLUSH PRIVILEGES;
   exit;
-  
+
 **Nagios teenuste lisamine**
 
 Ei monitoori enam klienti, kirjutan klient.cfg faili üle
@@ -347,7 +347,7 @@ Serverifaili sisu võiks olla.
 	contact_groups                  admins
 
   }
-  
+
   define service {
     use                             generic-service
     host_name                       lambikas
@@ -361,7 +361,7 @@ Serverifaili sisu võiks olla.
 
   service nagios restart
 
-  
+
 ---------
  Tulemus
 ---------
