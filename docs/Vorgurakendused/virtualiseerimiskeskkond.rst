@@ -9,7 +9,7 @@ Võrgurakenduste dokumentatsioon on testitud & koostatud järgneval
 virtualiseerimiskeskkonna seadistusel.
 
 Keskkonnas eksisteerib 2 virtuaalmasinat - klient ja server. Mõlemal masinal
-on 2 võrguadapterit - nesit esimene pääseb internetti, ning teine on
+on 2 võrguadapterit - neist esimene pääseb internetti, ning teine on
 :code:`internal network` adapter. Mõlemate OS on Debian 8.
 
 ----------------------
