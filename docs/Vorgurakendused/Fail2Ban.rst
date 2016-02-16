@@ -43,7 +43,7 @@ minimaalse :code:`jail.local` failiga.
   bantime  = 600
   findtime = 600
 
-  [ssh-iptables]
+  [ssh]
 
   enabled  = true
   filter   = sshd
